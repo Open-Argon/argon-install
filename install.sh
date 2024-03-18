@@ -77,14 +77,12 @@ sh ./build
 echo "built isotope
 "
 
-export PATH=$original_path
-
 cd ..
 
 mv ./argon-v3/bin/* ./output
 mv ./isotope/bin/* ./output
 
-save_path="~/.argon"
+save_path=$(realpath "~/.argon")
 
 mkdir -p $save_path
 
