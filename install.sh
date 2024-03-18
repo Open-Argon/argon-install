@@ -82,7 +82,7 @@ cd ..
 mv ./argon-v3/bin/* ./output
 mv ./isotope/bin/* ./output
 
-save_path=$(realpath "~/.argon")
+save_path="$HOME/.argon"
 
 mkdir -p $save_path
 
