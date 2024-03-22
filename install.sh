@@ -8,7 +8,7 @@ echo $temp
 
 cd $temp
 
-echo "temperarily downloading golang to compile argon and isotope..."
+echo "temporarily downloading golang to compile argon and isotope..."
 
 if ! command -v curl &> /dev/null; then
     echo "Error: curl is not installed. Please install curl before running this script. For example, you can install curl by running 'sudo apt install curl' on Debian based distros."
