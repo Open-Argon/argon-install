@@ -33,7 +33,7 @@ OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 GO_VERSION="1.22.0"  # Change this to your desired Go version
 
 # Specify the folder where you want to install Go
-INSTALLATION_PATH=$(realpath "./go")
+INSTALLATION_PATH="./go"
 
 mkdir -p "${INSTALLATION_PATH}"
 
