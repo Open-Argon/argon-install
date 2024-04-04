@@ -10,16 +10,6 @@ cd $temp
 
 echo "temporarily downloading golang to compile argon and isotope..."
 
-if ! command -v curl &> /dev/null; then
-    echo "Error: curl is not installed. Please install curl before running this script. For example, you can install curl by running 'sudo apt install curl' on Debian based distros."
-    exit 1
-fi
-
-if ! command -v git &> /dev/null; then
-    echo "Error: git is not installed. Please install git before running this script. For example, you can install git by running 'sudo apt install git' on Debian based distros."
-    exit 1
-fi
-
 ARCHITECTURE=$(uname -m)
 
 if [ $ARCHITECTURE = "x86_64" ]; then
