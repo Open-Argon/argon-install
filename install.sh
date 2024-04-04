@@ -15,6 +15,9 @@ ARCHITECTURE=$(uname -m)
 if [ $ARCHITECTURE = "x86_64" ]; then
     ARCHITECTURE="amd64"
 fi
+if [ $ARCHITECTURE = "aarch64" ]; then
+    ARCHITECTURE="arm64"
+fi
 
 # Get the operating system
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
