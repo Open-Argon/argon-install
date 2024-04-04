@@ -39,12 +39,6 @@ curl -o go.tar.gz $URL
 
 tar -C "${INSTALLATION_PATH}" -xzf go.tar.gz
 
-temp_directory=$INSTALLATION_PATH/go/bin
-
-original_path=$PATH
-
-export PATH=$PATH:$temp_directory
-
 
 echo "downloading argon and isotope..."
 
@@ -58,7 +52,7 @@ cd argon-v3
 
 echo "
 building argon..."
-sh ./build
+../go/go/bin/go build -trimpath -ldflags="-s -w" -o bin/argon ./src
 echo "built argon
 "
 
@@ -66,7 +60,7 @@ cd ../isotope
 
 echo "
 building isotope..."
-sh ./build
+../go/go/bin/go build -trimpath -ldflags="-s -w" -o ./bin/isotope ./src
 echo "built isotope
 "
 
