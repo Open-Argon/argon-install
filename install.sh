@@ -92,7 +92,6 @@ if [ "$SHELL"="/bin/bash" ]; then
     bash_config=~/.bashrc
     if ! path_exists "export PATH=\$PATH:$save_path" "$bash_config"; then
         echo 'export PATH=$PATH:'"$save_path" >> "$bash_config"
-        source "$bash_config"
         echo "Path added to Bash configuration."
     else
         echo "Path already exists in Bash configuration."
@@ -104,7 +103,6 @@ if [ "$SHELL"="/bin/zsh" ]; then
     zsh_config=~/.zshrc
     if ! path_exists "export PATH=\$PATH:$save_path" "$zsh_config"; then
         echo 'export PATH=$PATH:'"$save_path" >> "$zsh_config"
-        source "$zsh_config"
         echo "Path added to Zsh configuration."
     else
         echo "Path already exists in Zsh configuration."
@@ -116,7 +114,6 @@ if ["$SHELL"="/bin/fish"]; then
     fish_config=~/.config/fish/config.fish
     if ! path_exists "set --export PATH \$PATH $save_path" "$fish_config"; then
         echo 'set --export PATH $PATH '"$save_path" >> "$fish_config"
-        source "$fish_config"
         echo "Path added to Fish configuration."
     else
         echo "Path already exists in Fish configuration."
@@ -128,7 +125,6 @@ if [ "$SHELL"="/bin/tcsh" ]; then
     tcsh_config=~/.tcshrc
     if ! path_exists "setenv PATH \$PATH:$save_path" "$tcsh_config"; then
         echo 'setenv PATH $PATH:'"$save_path" >> "$tcsh_config"
-        source "$tcsh_config"
         echo "Path added to Tcsh configuration."
     else
         echo "Path already exists in Tcsh configuration."
