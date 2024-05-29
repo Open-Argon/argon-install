@@ -88,7 +88,7 @@ path_exists() {
 }
 
 # Check if Bash is the default shell
-if [ -n "$BASH_VERSION" ]; then
+if [ "$SHELL"="/bin/bash" ]; then
     bash_config=~/.bashrc
     if ! path_exists "export PATH=\$PATH:$save_path" "$bash_config"; then
         echo 'export PATH=$PATH:'"$save_path" >> "$bash_config"
@@ -100,7 +100,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Check if Zsh is the default shell
-if [ -n "$ZSH_VERSION" ]; then
+if [ "$SHELL"="/bin/zsh" ]; then
     zsh_config=~/.zshrc
     if ! path_exists "export PATH=\$PATH:$save_path" "$zsh_config"; then
         echo 'export PATH=$PATH:'"$save_path" >> "$zsh_config"
@@ -112,7 +112,7 @@ if [ -n "$ZSH_VERSION" ]; then
 fi
 
 # Check if Fish is the default shell
-if command -v fish >/dev/null 2>&1; then
+if ["$SHELL"="/bin/fish"]; then
     fish_config=~/.config/fish/config.fish
     if ! path_exists "set --export PATH \$PATH $save_path" "$fish_config"; then
         echo 'set --export PATH $PATH '"$save_path" >> "$fish_config"
@@ -124,7 +124,7 @@ if command -v fish >/dev/null 2>&1; then
 fi
 
 # Check if Tcsh is the default shell
-if [ -n "$shell" ] && [ "$(basename $SHELL)" = "tcsh" ]; then
+if [ "$SHELL"="/bin/tcsh" ]; then
     tcsh_config=~/.tcshrc
     if ! path_exists "setenv PATH \$PATH:$save_path" "$tcsh_config"; then
         echo 'setenv PATH $PATH:'"$save_path" >> "$tcsh_config"
