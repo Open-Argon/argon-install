@@ -88,7 +88,7 @@ path_exists() {
 }
 
 # Check if Bash is the default shell
-if [[ $SHELL = "/bin/bash" ]; then
+if [ $SHELL = "/bin/bash" ]; then
     bash_config=~/.bashrc
     if ! path_exists "export PATH=\$PATH:$save_path" "$bash_config"; then
         echo 'export PATH=$PATH:'"$save_path" >> "$bash_config"
