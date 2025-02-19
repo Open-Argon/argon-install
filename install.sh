@@ -23,7 +23,7 @@ fi
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 
 # Specify the Go version you want to install
-GO_VERSION="1.22.0"  # Change this to your desired Go version
+GO_VERSION="1.24.0"  # Change this to your desired Go version
 
 # Specify the folder where you want to install Go
 INSTALLATION_PATH="./go"
